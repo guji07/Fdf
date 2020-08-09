@@ -12,12 +12,12 @@
 
 #include "fdf.h"
 
-t_map	char_to_arr(char **grid, t_map map_stat)
+t_map		char_to_arr(char **grid, t_map map_stat)
 {
-	int	**map;
-	int	i;
+	int		**map;
+	int		i;
 	char	**str;
-	int	j;
+	int		j;
 
 	i = 0;
 	map = (int **)malloc(sizeof(int *) * map_stat.height);
@@ -32,8 +32,7 @@ t_map	char_to_arr(char **grid, t_map map_stat)
 		while (str[j])
 		{
 			map[i][j] = ft_atoi(str[j]);
-			ft_strdel(&str[j]);
-			j++;
+			ft_strdel(&str[j++]);
 		}
 		free(str);
 		i++;
@@ -43,10 +42,10 @@ t_map	char_to_arr(char **grid, t_map map_stat)
 	return (map_stat);
 }
 
-t_map	line_num(char **av)
+t_map		line_num(char **av)
 {
 	t_map	map_stat;
-	int	fd;
+	int		fd;
 	char	*line;
 
 	map_stat.height = 0;
@@ -60,9 +59,9 @@ t_map	line_num(char **av)
 	return (map_stat);
 }
 
-t_map get_map(char **av)
+t_map		get_map(char **av)
 {
-	int	fd;
+	int		fd;
 	char	*line;
 	char	**grid;
 	t_map	map_stat;
@@ -83,92 +82,7 @@ t_map get_map(char **av)
 	return (char_to_arr(grid, map_stat));
 }
 
-
-int	controls(int key, void *fdf1)
-{
-	t_fdf	*fdf;
-	
-	fdf = (t_fdf *)fdf1;
-	fdf->camera->iso = 0;
-	fdf->camera->zoomb = 0;
-	fdf->camera->move = 0;
-	if (key == MAIN_PAD_ESC)
-	{
-		(void)fdf;
-		exit(0);
-	}
-	if (key == NUM_PAD_6)
-	{
-		fdf->camera->move = 1;
-		fdf->camera->posx += 20;
-	}
-	if (key == NUM_PAD_8)
-	{
-		fdf->camera->move = 1;
-		fdf->camera->posy -= 10;
-	}
-	if (key == NUM_PAD_4)
-	{
-		fdf->camera->move = 1;
-		fdf->camera->posx -= 20;
-	}
-	if (key == NUM_PAD_2)
-	{
-		fdf->camera->move = 1;
-		fdf->camera->posy += 10;
-	}
-	if (key == NUM_PAD_PLUS || key == PLUS)
-	{
-		fdf->camera->zoomb = 1;
-		fdf->camera->zoom += 0.8;
-	}
-	if (key == NUM_PAD_MINUS || key == MINUS)
-	{
-		fdf->camera->zoomb = 1;
-		fdf->camera->zoom -= 0.8;
-	}
-	if (key == ARROW_RIGHT)
-	{
-		fdf->camera->b += 0.05;
-	}
-	if (key == ARROW_DOWN)
-	{
-		fdf->camera->a += 0.05;
-	}
-	if (key == ARROW_LEFT)
-	{
-		fdf->camera->b -= 0.05;
-	}
-	if (key == ARROW_UP)
-	{
-		fdf->camera->a -= 0.05;
-	}
-	if (key == NUM_PAD_0)
-	{
-		fdf->camera->iso = 1;
-	}
-	if (key == D_BUTTON)
-	{
-		fdf->camera->posx += 10;
-	}
-	if (key == A_BUTTON)
-	{
-		fdf->camera->posx -= 10;
-	}
-	if (key == W_BUTTON)
-	{
-		fdf->camera->posy -= 10;
-	}
-	if (key == S_BUTTON)
-	{
-		fdf->camera->posy += 10;
-	}
-	mlx_clear_window(fdf->mlx_ptr, fdf->win_ptr);
-	draw(fdf->map, fdf);
-	return (0);
-}
-
-int main(int ac, char **av)
+int			main(int ac, char **av)
 {
 	t_fdf	*fdf;
 
@@ -187,7 +101,8 @@ int main(int ac, char **av)
 	fdf->mlx_ptr = mlx_init();
 	*fdf->map = get_map(av);
 	fdf->win_ptr = mlx_new_window(fdf->mlx_ptr, 1500, 1500, "42 visualizer");
-	mlx_key_hook(fdf->win_ptr, controls, fdf);
+	mlx_key_hook(fdf->win_ptr, keyboard_control, fdf);
+	mlx_mouse_hook(fdf->win_ptr, mouse_control, fdf);
 	draw(fdf->map, fdf);
 	mlx_loop(fdf->mlx_ptr);
 	return (0);

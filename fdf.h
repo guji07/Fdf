@@ -34,59 +34,64 @@
 # define ARROW_UP			126
 # define ARROW_DOWN			125
 # define ARROW_LEFT			123
-# define ARROW_RIGHT			124
-#include <stdio.h>
-#include <mlx.h>
-#include <math.h>
-#include "libft/libft.h"
+# define ARROW_RIGHT		124
 
-typedef struct 			s_map
+# include <stdio.h>
+# include <mlx.h>
+# include <math.h>
+# include "libft/libft.h"
+
+typedef struct			s_map
 {
-	int 			**map;
-	int			width;
-	int			height;
-	int			x;
-	int			y;
-}				t_map;
+	int					**map;
+	int					width;
+	int					height;
+	int					x;
+	int					y;
+}						t_map;
 
 typedef struct			s_point
 {
-	float			x;
-	float			y;
-	float			z;
-	int			h;
-}				t_point;
+	float				x;
+	float				y;
+	float				z;
+	int					h;
+}						t_point;
 
-typedef struct 			s_camera
+typedef struct			s_camera
 {
-	float			zoom;
-	int			zoomb;
-	int			iso;
-	int			move;
-	int			posx;
-	int			posy;
-	double			a;
-	double			b;
-	double			c;
-}				t_camera;
+	float				zoom;
+	int					zoomb;
+	int					iso;
+	int					move;
+	int					posx;
+	int					posy;
+	double				a;
+	double				b;
+	double				c;
+}						t_camera;
 
-
-typedef	struct 			s_fdf
+typedef	struct			s_fdf
 {
-		void		*mlx_ptr;
-		void		*win_ptr;
-		void		*img_ptr;
-		t_camera	*camera;
-		t_map		*map;
-		char		*data_addr;
-		int		bits_per_pixel;
-		int		size_line;
-		int		endian;
-}				t_fdf;
+	void				*mlx_ptr;
+	void				*win_ptr;
+	void				*img_ptr;
+	t_camera			*camera;
+	t_map				*map;
+	char				*data_addr;
+	int					bits_per_pixel;
+	int					size_line;
+	int					endian;
+}						t_fdf;
 
-int		ft_abs(int a);
-t_point	*init_point(int x, int y, t_map *map_stat);
-void	draw_line(t_fdf *fdf, t_point start, t_point finish);
-void	draw(t_map *map_stat, t_fdf *fdf);
+int						ft_abs(int a);
+t_point					*init_point(int x, int y, t_map *map_stat);
+void					draw_line(t_fdf *fdf, t_point start, t_point finish);
+void					draw(t_map *map_stat, t_fdf *fdf);
+
+/*
+ * keyboard_control
+ */
+int						keyboard_control(int key, void *fdf1);
 
 #endif
