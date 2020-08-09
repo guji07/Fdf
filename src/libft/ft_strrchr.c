@@ -3,25 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cauranus <cauranus@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/05 16:37:48 by cauranus          #+#    #+#             */
-/*   Updated: 2019/09/08 18:46:58 by cauranus         ###   ########.fr       */
+/*   Created: 2019/09/04 14:30:49 by tgarkbit          #+#    #+#             */
+/*   Updated: 2019/09/04 14:30:53 by tgarkbit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *string, int symbol)
 {
-	size_t i;
+	int		i;
+	char	*point;
 
-	i = ft_strlen(s);
-	if ((char)c == '\0')
-		return ((char *)&s[i]);
-	while (i != 0 && s[i] != (char)c)
-		i--;
-	if (i == 0 && s[i] != (char)c)
-		return (NULL);
-	return ((char *)&s[i]);
+	point = 0;
+	i = -1;
+	while (string[++i])
+		if (string[i] == symbol)
+			point = (char *)(string + i);
+	if (symbol == string[i])
+		return (char*)(string + i);
+	return (point);
 }

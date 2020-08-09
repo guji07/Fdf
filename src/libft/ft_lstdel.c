@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cauranus <cauranus@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/09 18:46:50 by cauranus          #+#    #+#             */
-/*   Updated: 2019/09/09 20:23:22 by cauranus         ###   ########.fr       */
+/*   Created: 2019/09/11 10:13:37 by tgarkbit          #+#    #+#             */
+/*   Updated: 2019/09/11 10:13:53 by tgarkbit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	t_list *buf;
+	t_list	*buf;
 
 	while (*alst)
 	{

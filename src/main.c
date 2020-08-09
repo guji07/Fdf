@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cauranus <cauranus@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/07 16:13:34 by cauranus          #+#    #+#             */
-/*   Updated: 2019/11/14 19:45:27 by cauranus         ###   ########.fr       */
+/*   Created: 2020/08/09 11:36:00 by tgarkbit          #+#    #+#             */
+/*   Updated: 2020/08/09 11:36:01 by tgarkbit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,7 @@ t_map		char_to_arr(char **grid, t_map map_stat)
 		free(str);
 		i++;
 	}
-	map[i] = NULL;
-	map_stat.map = map;
-	return (map_stat);
+	return (f_obnulenie(map_stat, map, i));
 }
 
 t_map		line_num(char **av)
@@ -82,28 +80,41 @@ t_map		get_map(char **av)
 	return (char_to_arr(grid, map_stat));
 }
 
+t_fdf		*initialize_fdf(t_fdf *fdf, char **av)
+{
+	fdf = malloc(sizeof(t_fdf));
+	fdf->camera = malloc(sizeof(t_camera));
+	fdf->map = malloc(sizeof(t_map));
+	fdf->camera->posx = 300;
+	fdf->camera->posy = 150;
+	fdf->camera->zoom = 7;
+	fdf->camera->a = 60;
+	fdf->camera->b = 60;
+	fdf->camera->c = 60;
+	fdf->camera->iso = 0;
+	fdf->camera->zoomb = 1;
+	fdf->camera->move = 1;
+	fdf->mlx_ptr = mlx_init();
+	*fdf->map = get_map(av);
+	fdf->win_ptr = mlx_new_window(fdf->mlx_ptr, 1500, 1500, "42 visualizer");
+	return (fdf);
+}
+
 int			main(int ac, char **av)
 {
 	t_fdf	*fdf;
 
 	if (ac == 2)
 	{
-		fdf = malloc(sizeof(t_fdf));
-		fdf->camera = malloc(sizeof(t_camera));
-		fdf->map = malloc(sizeof(t_map));
-		fdf->camera->posx = 300;
-		fdf->camera->posy = 150;
-		fdf->camera->zoom = 7;
-		fdf->camera->a = 60;
-		fdf->camera->b = 60;
-		fdf->camera->c = 60;
-		fdf->camera->iso = 0;
-		fdf->camera->zoomb = 1;
-		fdf->camera->move = 1;
-		fdf->mlx_ptr = mlx_init();
-		*fdf->map = get_map(av);
-		fdf->win_ptr = mlx_new_window(fdf->mlx_ptr, 1500, 1500, "42 visualizer");
-		mlx_key_hook(fdf->win_ptr, keyboard_control, fdf);
+		LEFT_CLICKED = 0;
+		RIGHT_CLICKED = 0;
+		fdf = NULL;
+		fdf = initialize_fdf(fdf, av);
+		mlx_hook(fdf->win_ptr, 2, 2, keyboard_control, fdf);
+		//mlx_key_hook(fdf->win_ptr, keyboard_control, fdf);
+		mlx_hook(fdf->win_ptr, 6, 2, mouse_control, fdf);
+		mlx_hook(fdf->win_ptr, 4, 2, mouse_press, fdf);
+		mlx_hook(fdf->win_ptr, 5, 2, mouse_release, fdf);
 		//mlx_mouse_hook(fdf->win_ptr, mouse_control, fdf);
 		draw(fdf->map, fdf);
 		mlx_loop(fdf->mlx_ptr);

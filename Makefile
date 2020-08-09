@@ -14,9 +14,7 @@ SRCS = src/draw_lines.c         \
        src/keyboard_control.c   \
        src/main.c               \
        src/mouse_control.c      \
-
-
-
+       src/rotate.c             \
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -29,10 +27,10 @@ $(NAME): $(OBJ)
 	echo "Fdf done"
 
 clean:
-	make clean -C libft
+	make clean -C src/libft
 	rm -f $(OBJ)
 fclean: clean
-	make fclean -C libft
+	make fclean -C src/libft
 	rm -f $(NAME)
 
 re: fclean all

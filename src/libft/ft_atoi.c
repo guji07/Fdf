@@ -3,37 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cauranus <cauranus@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 15:34:08 by cauranus          #+#    #+#             */
-/*   Updated: 2019/09/12 18:42:11 by cauranus         ###   ########.fr       */
+/*   Created: 2019/07/08 16:00:51 by tgarkbit          #+#    #+#             */
+/*   Updated: 2019/09/11 10:52:40 by tgarkbit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int					ft_atoi(const char *str)
 {
-	unsigned long long	num;
-	int					neg;
+	int						z;
+	signed long long int	sum;
 
-	neg = 0;
-	num = 0;
-	while ((*str == '\n') || (*str == ' ') || (*str == '\f')
-	|| (*str == '\r') || (*str == '\t') || (*str == '\v'))
+	z = 1;
+	sum = 0;
+	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f' ||
+	*str == '\v' || *str == '\a' || *str == '\r')
 		str++;
-	if (*str == '-' || *str == '+')
+	if (*str == '-')
+		z = -1;
+	if (*str == '+' || *str == '-')
+		str++;
+	while ((*str >= '0') && (*str <= '9'))
 	{
-		if (*str == '-')
-			neg = 1;
+		sum = (sum * 10) + (*str - '0');
+		if (sum < 0 && z < 0)
+			return (0);
+		if (sum < 0 && z == 1)
+			return (-1);
 		str++;
 	}
-	while (*str >= '0' && *str <= '9')
-	{
-		num = num * 10 + (*str - '0');
-		if (num * 1000 < num)
-			return (neg ? 0 : -1);
-		str++;
-	}
-	return (neg ? (-1 * (int)num) : (int)num);
+	return (int)(z * sum);
 }

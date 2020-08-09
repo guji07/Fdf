@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cauranus <cauranus@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/07 16:14:32 by cauranus          #+#    #+#             */
-/*   Updated: 2019/09/08 18:20:47 by cauranus         ###   ########.fr       */
+/*   Created: 2019/09/04 14:07:40 by tgarkbit          #+#    #+#             */
+/*   Updated: 2019/09/04 14:08:03 by tgarkbit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	size_t	buf;
-	char	c;
+	int		size;
 
-	c = '\n';
-	buf = ft_strlen(s);
-	write(fd, s, buf);
-	write(fd, &c, 1);
+	size = ft_strlen(s);
+	write(fd, s, size);
+	write(fd, "\n", 1);
 }

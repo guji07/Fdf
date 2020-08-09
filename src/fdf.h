@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cauranus <cauranus@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/07 19:04:17 by cauranus          #+#    #+#             */
-/*   Updated: 2019/11/14 20:31:05 by cauranus         ###   ########.fr       */
+/*   Created: 2020/08/09 11:35:52 by tgarkbit          #+#    #+#             */
+/*   Updated: 2020/08/09 11:35:55 by tgarkbit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@
 # define S_BUTTON			1
 # define A_BUTTON			0
 # define W_BUTTON			13
-# define PLUS				24
-# define MINUS				27
+# define PLUS_BUTTON		24
+# define MINUS_BUTTON		27
 # define ARROW_UP			126
 # define ARROW_DOWN			125
 # define ARROW_LEFT			123
@@ -40,6 +40,9 @@
 # include <mlx.h>
 # include <math.h>
 # include "libft/libft.h"
+# include <fcntl.h>
+int LEFT_CLICKED;
+int RIGHT_CLICKED;
 
 typedef struct			s_map
 {
@@ -89,10 +92,25 @@ t_point					*init_point(int x, int y, t_map *map_stat);
 void					draw_line(t_fdf *fdf, t_point start, t_point finish);
 void					draw(t_map *map_stat, t_fdf *fdf);
 
+int						mouse_control(int x, int y, void *fdf1);
+t_point					rotate(t_point *p, t_fdf *fdf);
+void					iso(float *x, float *y, int z, t_fdf *fdf);
+t_map 					f_obnulenie(t_map map_stat, int **map, int i);
+
+
 /*
  * keyboard_control
  */
 int						keyboard_control(int key, void *fdf1);
-int						mouse_control(int key, void *fdf1);
+void					zoom_control(int key, t_fdf *fdf);
+void					numpad_control(int key, t_fdf *fdf);
+void					arrows_control(int key, t_fdf *fdf);
+void					wasd_control(int key, t_fdf *fdf);
 
+
+/*
+ * mouse control
+ */
+int 				mouse_release(int button, int x, int y, void *fdf);
+int 				mouse_press(int button, int x, int y, void *fdf);
 #endif

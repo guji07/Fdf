@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Fdf"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/tgarkbit/Desktop/Fdf/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/tgarkbit/Desktop/Fdf/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/tgarkbit/Desktop/Fdf/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Fdf">
+				<Option output="/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Fdf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/tgarkbit/Desktop/Fdf/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/tgarkbit/Desktop/Fdf/."/>
+					<Add directory="/Users/tgarkbit/Desktop/Fdf/libft"/>
+					<Add directory="/Users/tgarkbit/Desktop/Fdf/minilibx"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 Fdf"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Fdf/fast">
+				<Option output="/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Fdf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/tgarkbit/Desktop/Fdf/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/tgarkbit/Desktop/Fdf/."/>
+					<Add directory="/Users/tgarkbit/Desktop/Fdf/libft"/>
+					<Add directory="/Users/tgarkbit/Desktop/Fdf/minilibx"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 Fdf/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/tgarkbit/Desktop/Fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/draw_lines.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/fdf.h">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/keyboard_control.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_atoi.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_bzero.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_isalnum.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_isalpha.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_isascii.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_isdigit.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_islower.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_isprint.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_isupper.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_itoa.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_lstadd.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_lstaddback.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_lstdel.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_lstdelone.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_lstfreeone.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_lstiter.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_lstmap.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_lstnew.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_memalloc.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_memccpy.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_memchr.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_memcmp.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_memcpy.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_memdel.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_memmove.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_memset.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_putchar.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_putchar_fd.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_putendl.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_putendl_fd.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_putnbr.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_putnbr_fd.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_putstr.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_putstr_fd.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_sqrt.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strcat.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strchr.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strchrn.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strclr.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strcmp.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strcpy.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strdel.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strdup.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strequ.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_striter.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_striteri.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strjoin.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strlcat.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strlen.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strmap.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strmapi.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strncat.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strncmp.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strncpy.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strndup.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strnequ.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strnew.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strnlen.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strnstr.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strrchr.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strrev.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strset.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strsplit.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strstr.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strsub.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_strtrim.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_swapfree.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_tolower.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/ft_toupper.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/get_next_line.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/libft/libft.h">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/main.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/minilibx/font.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/minilibx/mlx.h">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/minilibx/mlx_init_loop.m">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/minilibx/mlx_int.h">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/minilibx/mlx_int_str_to_wordtab.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/minilibx/mlx_new_image.m">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/minilibx/mlx_new_window.h">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/minilibx/mlx_new_window.m">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/minilibx/mlx_rgb.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/minilibx/mlx_shaders.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/minilibx/mlx_xpm.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/mouse_control.c">
+			<Option target="Fdf"/>
+		</Unit>
+		<Unit filename="/Users/tgarkbit/Desktop/Fdf/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

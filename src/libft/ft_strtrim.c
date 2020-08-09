@@ -3,61 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cauranus <cauranus@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/07 13:59:59 by cauranus          #+#    #+#             */
-/*   Updated: 2019/09/09 13:34:28 by cauranus         ###   ########.fr       */
+/*   Created: 2019/09/04 14:11:26 by tgarkbit          #+#    #+#             */
+/*   Updated: 2019/09/11 12:02:46 by tgarkbit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	wh_counter(const char *s)
+static	char	*ft_createzero(void)
 {
-	size_t end;
-	size_t i;
-	size_t i2;
+	char	*s;
 
-	end = 0;
-	i = 0;
-	i2 = 0;
-	while (s[end])
-		end++;
-	while (s[i] && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
-		i++;
-	while (end > i && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
-	{
-		end--;
-		i2++;
-	}
-	return (i2 + i);
+	s = (char*)malloc(1);
+	s[0] = '\0';
+	return (s);
 }
 
 char			*ft_strtrim(char const *s)
 {
-	char	*trim;
-	size_t	len;
-	size_t	end;
-	size_t	i;
+	int		i;
+	int		n;
+	char	*str;
 
-	if (!s + (i = 0))
-		return (NULL);
-	len = ft_strlen(s) - wh_counter(s);
-	if (ft_strlen(s) == wh_counter(s))
+	if (s)
 	{
-		if (!(trim = (char *)ft_memalloc(sizeof(char))))
-			return (NULL);
-		return (trim);
+		i = 0;
+		n = ft_strlen(s);
+		while (s[i] && (s[i] == '\t' || s[i] == ' ' || s[i] == '\n'))
+			i++;
+		while (n >= 0 && (s[n - 1] == '\t' ||
+		s[n - 1] == ' ' || s[n - 1] == '\n'))
+			n--;
+		if ((size_t)i == ft_strlen(s) && *s)
+			return (ft_createzero());
+		if ((str = (char*)ft_memalloc(n - i + 1)))
+		{
+			ft_strncpy(str, s + i, n - i);
+			return (str);
+		}
 	}
-	len = 0;
-	while (s[len] && (s[len] == ' ' || s[len] == '\n' || s[len] == '\t'))
-		len++;
-	end = ft_strlen(s) - 1;
-	while ((s[end] == ' ' || s[end] == '\n' || s[end] == '\t') && end)
-		end--;
-	if (!(trim = (char *)ft_memalloc(sizeof(char) * (end - len + 2))))
-		return (NULL);
-	while (len <= end)
-		trim[i++] = s[len++];
-	return (trim);
+	return (NULL);
 }
