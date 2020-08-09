@@ -86,24 +86,31 @@ int			main(int ac, char **av)
 {
 	t_fdf	*fdf;
 
-	fdf = malloc(sizeof(t_fdf));
-	fdf->camera = malloc(sizeof(t_camera));
-	fdf->map = malloc(sizeof(t_map));
-	fdf->camera->posx = 300;
-	fdf->camera->posy = 150;
-	fdf->camera->zoom = 7;
-	fdf->camera->a = 60;
-	fdf->camera->b = 60;
-	fdf->camera->c = 60;
-	fdf->camera->iso = 0;
-	fdf->camera->zoomb = 1;
-	fdf->camera->move = 1;
-	fdf->mlx_ptr = mlx_init();
-	*fdf->map = get_map(av);
-	fdf->win_ptr = mlx_new_window(fdf->mlx_ptr, 1500, 1500, "42 visualizer");
-	mlx_key_hook(fdf->win_ptr, keyboard_control, fdf);
-	mlx_mouse_hook(fdf->win_ptr, mouse_control, fdf);
-	draw(fdf->map, fdf);
-	mlx_loop(fdf->mlx_ptr);
+	if (ac == 2)
+	{
+		fdf = malloc(sizeof(t_fdf));
+		fdf->camera = malloc(sizeof(t_camera));
+		fdf->map = malloc(sizeof(t_map));
+		fdf->camera->posx = 300;
+		fdf->camera->posy = 150;
+		fdf->camera->zoom = 7;
+		fdf->camera->a = 60;
+		fdf->camera->b = 60;
+		fdf->camera->c = 60;
+		fdf->camera->iso = 0;
+		fdf->camera->zoomb = 1;
+		fdf->camera->move = 1;
+		fdf->mlx_ptr = mlx_init();
+		*fdf->map = get_map(av);
+		fdf->win_ptr = mlx_new_window(fdf->mlx_ptr, 1500, 1500, "42 visualizer");
+		mlx_key_hook(fdf->win_ptr, keyboard_control, fdf);
+		//mlx_mouse_hook(fdf->win_ptr, mouse_control, fdf);
+		draw(fdf->map, fdf);
+		mlx_loop(fdf->mlx_ptr);
+	}
+	else
+	{
+		ft_putstr("usage: ./fdf <map_name>");
+	}
 	return (0);
 }

@@ -93,5 +93,6 @@ void					draw(t_map *map_stat, t_fdf *fdf);
  * keyboard_control
  */
 int						keyboard_control(int key, void *fdf1);
+int						mouse_control(int key, void *fdf1);
 
 #endif

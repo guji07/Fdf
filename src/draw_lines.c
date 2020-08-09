@@ -47,17 +47,6 @@ static void	rotate_y(float *x, float *z, double b)
 	*z = -previous_x * sin(b) + *z * cos(b);
 }
 
-//static void	rotate_z(float *x, float *y, double c)
-//{
-//	int previous_x;
-//	int previous_y;
-//
-//	previous_x = *x;
-//	previous_y = *y;
-//	*x = previous_x * cos(c) - previous_y * sin(c);
-//	*y = previous_x * sin(c) + previous_y * cos(c);
-//}
-
 void	iso(float *x, float *y, int z, t_fdf *fdf)
 {
     int previous_x;
@@ -67,6 +56,7 @@ void	iso(float *x, float *y, int z, t_fdf *fdf)
     previous_y = *y;
     *x = (previous_x - previous_y) * cos(0.523599);
     *y = -z + (previous_x + previous_y) * sin(0.523599);
+    printf("%p", fdf->camera);
 }
 
 t_point	rotate(t_point *p, t_fdf *fdf)
