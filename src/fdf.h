@@ -41,8 +41,9 @@
 # include <math.h>
 # include "libft/libft.h"
 # include <fcntl.h>
-int LEFT_CLICKED;
-int RIGHT_CLICKED;
+
+int g_left_clicked;
+int g_right_clicked;
 
 typedef struct			s_map
 {
@@ -95,22 +96,22 @@ void					draw(t_map *map_stat, t_fdf *fdf);
 int						mouse_control(int x, int y, void *fdf1);
 t_point					rotate(t_point *p, t_fdf *fdf);
 void					iso(float *x, float *y, int z, t_fdf *fdf);
-t_map 					f_obnulenie(t_map map_stat, int **map, int i);
-
+t_map					f_obnulenie(t_map map_stat, int **map, int i);
 
 /*
- * keyboard_control
- */
+** keyboard control
+*/
+
 int						keyboard_control(int key, void *fdf1);
 void					zoom_control(int key, t_fdf *fdf);
 void					numpad_control(int key, t_fdf *fdf);
 void					arrows_control(int key, t_fdf *fdf);
 void					wasd_control(int key, t_fdf *fdf);
 
-
 /*
- * mouse control
- */
-int 				mouse_release(int button, int x, int y, void *fdf);
-int 				mouse_press(int button, int x, int y, void *fdf);
+** mouse control
+*/
+
+int						mouse_release(int button, int x, int y, void *fdf);
+int						mouse_press(int button, int x, int y, void *fdf);
 #endif

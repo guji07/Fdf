@@ -51,6 +51,7 @@ void			zoom_control(int key, t_fdf *fdf)
 		fdf->camera->zoom -= 2;
 	}
 }
+
 void			numpad_control(int key, t_fdf *fdf)
 {
 	if (key == NUM_PAD_6)

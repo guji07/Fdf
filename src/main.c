@@ -106,16 +106,14 @@ int			main(int ac, char **av)
 
 	if (ac == 2)
 	{
-		LEFT_CLICKED = 0;
-		RIGHT_CLICKED = 0;
+		g_left_clicked = 0;
+		g_right_clicked = 0;
 		fdf = NULL;
 		fdf = initialize_fdf(fdf, av);
 		mlx_hook(fdf->win_ptr, 2, 2, keyboard_control, fdf);
-		//mlx_key_hook(fdf->win_ptr, keyboard_control, fdf);
 		mlx_hook(fdf->win_ptr, 6, 2, mouse_control, fdf);
 		mlx_hook(fdf->win_ptr, 4, 2, mouse_press, fdf);
 		mlx_hook(fdf->win_ptr, 5, 2, mouse_release, fdf);
-		//mlx_mouse_hook(fdf->win_ptr, mouse_control, fdf);
 		draw(fdf->map, fdf);
 		mlx_loop(fdf->mlx_ptr);
 	}
