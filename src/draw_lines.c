@@ -81,10 +81,3 @@ void			draw(t_map *map_stat, t_fdf *fdf)
 		y++;
 	}
 }
-
-t_map			f_obnulenie(t_map map_stat, int **map, int i)
-{
-	map[i] = NULL;
-	map_stat.map = map;
-	return (map_stat);
-}

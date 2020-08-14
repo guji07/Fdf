@@ -12,23 +12,6 @@
 
 #include "fdf.h"
 
-t_map		line_num(char **av)
-{
-	t_map	map_stat;
-	int		fd;
-	char	*line;
-
-	map_stat.height = 0;
-	fd = open(av[1], O_RDONLY);
-	while (get_next_line(fd, &line) > 0)
-	{
-		ft_strdel(&line);
-		map_stat.height++;
-	}
-	close(fd);
-	return (map_stat);
-}
-
 int			main(int ac, char **av)
 {
 	t_fdf	*fdf;
@@ -96,6 +79,24 @@ t_map		get_map(char **av)
 	return (char_to_arr(grid, map_stat));
 }
 
+
+t_map		line_num(char **av)
+{
+	t_map	map_stat;
+	int		fd;
+	char	*line;
+
+	map_stat.height = 0;
+	fd = open(av[1], O_RDONLY);
+	while (get_next_line(fd, &line) > 0)
+	{
+		ft_strdel(&line);
+		map_stat.height++;
+	}
+	close(fd);
+	return (map_stat);
+}
+
 t_map		char_to_arr(char **grid, t_map map_stat)
 {
 	int		**map;
@@ -104,7 +105,7 @@ t_map		char_to_arr(char **grid, t_map map_stat)
 	int		j;
 
 	i = 0;
-	map = (int **)malloc(sizeof(int *) * map_stat.height);//малочим указатель на строки с циферками
+	map = (int **)malloc(sizeof(int *) * (map_stat.height + 1));//малочим указатель на строки с циферками
 	while (grid[i])
 	{
 		j = 0;
@@ -119,8 +120,9 @@ t_map		char_to_arr(char **grid, t_map map_stat)
 			ft_strdel(&str[j++]);
 		}
 		free(str);
-		free(grid[j]);
+		free(grid[i]);
 		i++;
 	}
+	free(grid);
 	return (f_obnulenie(map_stat, map, i));
 }

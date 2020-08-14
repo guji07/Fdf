@@ -28,7 +28,6 @@ int			mouse_control(int x, int y, void *fdf1)
 	}
 	if (g_right_clicked == 1)
 	{
-		printf("right clicked");
 		fdf->camera->move = 1;
 		fdf->camera->posx += 0.1 * x;
 		fdf->camera->posy += 0.1 * y;

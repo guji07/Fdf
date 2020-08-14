@@ -12,15 +12,24 @@
 
 #include "fdf.h"
 
-void free_fdf(t_fdf *fdf)
+void			free_fdf(t_fdf *fdf)
 {
 	int 	i;
-	t_map	*map;
+	int		**map;
 
 	free(fdf->camera);
-	free(fdf->camera);
 	i = -1;
-	map = fdf->map;
-	//map =
+	map = fdf->map->map;
+	while (map[i] != NULL)
+		free(map[i]);
+	free(fdf->map);
+	free(map);
 	free(fdf);
+}
+
+t_map			f_obnulenie(t_map map_stat, int **map, int i)
+{
+	map[i] = NULL;
+	map_stat.map = map;
+	return (map_stat);
 }
