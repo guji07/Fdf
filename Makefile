@@ -23,6 +23,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	make -C src/libft
+	make -C minilibx
 	gcc -o $(NAME) $(FLAGS) $(OBJ) -lmlx -framework OpenGL -framework AppKit src/libft/libft.a
 	echo "Fdf done"
 

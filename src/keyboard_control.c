@@ -27,6 +27,7 @@ int				keyboard_control(int key, void *fdf1)
 	if (key == MAIN_PAD_ESC)
 	{
 		(void)fdf;
+		free_fdf(fdf);
 		exit(0);
 	}
 	if (key == NUM_PAD_0)

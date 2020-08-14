@@ -1,84 +1,13 @@
-cmake_minimum_required(VERSION 3.16)
-project(Fdf C)
+cmake_minimum_required(VERSION 3.17)
+project(fdf C)
 
 set(CMAKE_C_STANDARD 11)
 
-include_directories(.)
-include_directories(libft)
 include_directories(minilibx)
+include_directories(src)
+include_directories(src/libft)
 
-add_executable(Fdf
-        libft/ft_atoi.c
-        libft/ft_bzero.c
-        libft/ft_isalnum.c
-        libft/ft_isalpha.c
-        libft/ft_isascii.c
-        libft/ft_isdigit.c
-        libft/ft_islower.c
-        libft/ft_isprint.c
-        libft/ft_isupper.c
-        libft/ft_itoa.c
-        libft/ft_lstadd.c
-        libft/ft_lstaddback.c
-        libft/ft_lstdel.c
-        libft/ft_lstdelone.c
-        libft/ft_lstfreeone.c
-        libft/ft_lstiter.c
-        libft/ft_lstmap.c
-        libft/ft_lstnew.c
-        libft/ft_memalloc.c
-        libft/ft_memccpy.c
-        libft/ft_memchr.c
-        libft/ft_memcmp.c
-        libft/ft_memcpy.c
-        libft/ft_memdel.c
-        libft/ft_memmove.c
-        libft/ft_memset.c
-        libft/ft_putchar.c
-        libft/ft_putchar_fd.c
-        libft/ft_putendl.c
-        libft/ft_putendl_fd.c
-        libft/ft_putnbr.c
-        libft/ft_putnbr_fd.c
-        libft/ft_putstr.c
-        libft/ft_putstr_fd.c
-        libft/ft_sqrt.c
-        libft/ft_strcat.c
-        libft/ft_strchr.c
-        libft/ft_strchrn.c
-        libft/ft_strclr.c
-        libft/ft_strcmp.c
-        libft/ft_strcpy.c
-        libft/ft_strdel.c
-        libft/ft_strdup.c
-        libft/ft_strequ.c
-        libft/ft_striter.c
-        libft/ft_striteri.c
-        libft/ft_strjoin.c
-        libft/ft_strlcat.c
-        libft/ft_strlen.c
-        libft/ft_strmap.c
-        libft/ft_strmapi.c
-        libft/ft_strncat.c
-        libft/ft_strncmp.c
-        libft/ft_strncpy.c
-        libft/ft_strndup.c
-        libft/ft_strnequ.c
-        libft/ft_strnew.c
-        libft/ft_strnlen.c
-        libft/ft_strnstr.c
-        libft/ft_strrchr.c
-        libft/ft_strrev.c
-        libft/ft_strset.c
-        libft/ft_strsplit.c
-        libft/ft_strstr.c
-        libft/ft_strsub.c
-        libft/ft_strtrim.c
-        libft/ft_swapfree.c
-        libft/ft_tolower.c
-        libft/ft_toupper.c
-        libft/get_next_line.c
-        libft/libft.h
+add_executable(fdf
         minilibx/font.c
         minilibx/mlx.h
         minilibx/mlx_init_loop.m
@@ -90,6 +19,102 @@ add_executable(Fdf
         minilibx/mlx_rgb.c
         minilibx/mlx_shaders.c
         minilibx/mlx_xpm.c
+        src/libft/flag_char.c
+        src/libft/flag_f1.c
+        src/libft/flag_f2.c
+        src/libft/flag_int.c
+        src/libft/flag_o.c
+        src/libft/flag_p.c
+        src/libft/flag_percent.c
+        src/libft/flag_str.c
+        src/libft/flag_unsignedint.c
+        src/libft/flag_x1.c
+        src/libft/ft_atoi.c
+        src/libft/ft_atoidie.c
+        src/libft/ft_bzero.c
+        src/libft/ft_die.c
+        src/libft/ft_flagx2.c
+        src/libft/ft_free_ar.c
+        src/libft/ft_intlen.c
+        src/libft/ft_intmalloc.c
+        src/libft/ft_isalnum.c
+        src/libft/ft_isalpha.c
+        src/libft/ft_isascii.c
+        src/libft/ft_isdigit.c
+        src/libft/ft_isprint.c
+        src/libft/ft_itoa.c
+        src/libft/ft_itoabase.c
+        src/libft/ft_lstadd.c
+        src/libft/ft_lstdel.c
+        src/libft/ft_lstdelone.c
+        src/libft/ft_lstiter.c
+        src/libft/ft_lstmap.c
+        src/libft/ft_lstnew.c
+        src/libft/ft_max.c
+        src/libft/ft_memalloc.c
+        src/libft/ft_memccpy.c
+        src/libft/ft_memchr.c
+        src/libft/ft_memcmp.c
+        src/libft/ft_memcpy.c
+        src/libft/ft_memdel.c
+        src/libft/ft_memmove.c
+        src/libft/ft_memset.c
+        src/libft/ft_pow.c
+        src/libft/ft_printf.c
+        src/libft/ft_putchar.c
+        src/libft/ft_putchar_fd.c
+        src/libft/ft_putendl.c
+        src/libft/ft_putendl_fd.c
+        src/libft/ft_putnbr.c
+        src/libft/ft_putnbr_fd.c
+        src/libft/ft_putnbrpos.c
+        src/libft/ft_putnstr.c
+        src/libft/ft_putstr.c
+        src/libft/ft_putstr_fd.c
+        src/libft/ft_putunsignednbr.c
+        src/libft/ft_putupstr.c
+        src/libft/ft_reverse.c
+        src/libft/ft_strcat.c
+        src/libft/ft_strcatspace.c
+        src/libft/ft_strchr.c
+        src/libft/ft_strclr.c
+        src/libft/ft_strcmp.c
+        src/libft/ft_strcpy.c
+        src/libft/ft_strdel.c
+        src/libft/ft_strdup.c
+        src/libft/ft_strequ.c
+        src/libft/ft_striter.c
+        src/libft/ft_striteri.c
+        src/libft/ft_strjoin.c
+        src/libft/ft_strjoinfree.c
+        src/libft/ft_strlcat.c
+        src/libft/ft_strlen.c
+        src/libft/ft_strmap.c
+        src/libft/ft_strmapi.c
+        src/libft/ft_strncat.c
+        src/libft/ft_strncmp.c
+        src/libft/ft_strncpy.c
+        src/libft/ft_strnequ.c
+        src/libft/ft_strnew.c
+        src/libft/ft_strnstr.c
+        src/libft/ft_strrchr.c
+        src/libft/ft_strsplit.c
+        src/libft/ft_strstr.c
+        src/libft/ft_strsub.c
+        src/libft/ft_strtrim.c
+        src/libft/ft_swap.c
+        src/libft/ft_swapint.c
+        src/libft/ft_tolower.c
+        src/libft/ft_toupper.c
+        src/libft/ft_unsignedintlen.c
+        src/libft/ft_write.c
+        src/libft/get_next_line.c
+        src/libft/libft.h
+        src/libft/parsers.c
         src/draw_lines.c
         src/fdf.h
-        src/main.c src/keyboard_control.c src/mouse_control.c src/rotate.c)
+        src/keyboard_control.c
+        src/main.c
+        src/mix.c
+        src/mouse_control.c
+        src/rotate.c)

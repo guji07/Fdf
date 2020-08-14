@@ -92,7 +92,8 @@ int						ft_abs(int a);
 t_point					*init_point(int x, int y, t_map *map_stat);
 void					draw_line(t_fdf *fdf, t_point start, t_point finish);
 void					draw(t_map *map_stat, t_fdf *fdf);
-
+t_map					get_map(char **av);
+t_fdf					*initialize_fdf(t_fdf *fdf, char **av);
 int						mouse_control(int x, int y, void *fdf1);
 t_point					rotate(t_point *p, t_fdf *fdf);
 void					iso(float *x, float *y, int z, t_fdf *fdf);
@@ -114,4 +115,6 @@ void					wasd_control(int key, t_fdf *fdf);
 
 int						mouse_release(int button, int x, int y, void *fdf);
 int						mouse_press(int button, int x, int y, void *fdf);
+
+void 					free_fdf(t_fdf *fdf);
 #endif
