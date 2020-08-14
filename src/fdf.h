@@ -98,6 +98,7 @@ int						mouse_control(int x, int y, void *fdf1);
 t_point					rotate(t_point *p, t_fdf *fdf);
 void					iso(float *x, float *y, int z, t_fdf *fdf);
 t_map					f_obnulenie(t_map map_stat, int **map, int i);
+t_map					char_to_arr(char **grid, t_map map_stat);
 
 /*
 ** keyboard control

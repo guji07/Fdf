@@ -12,35 +12,6 @@
 
 #include "fdf.h"
 
-t_map		char_to_arr(char **grid, t_map map_stat)
-{
-	int		**map;
-	int		i;
-	char	**str;
-	int		j;
-
-	i = 0;
-	map = (int **)malloc(sizeof(int *) * map_stat.height);
-	while (grid[i])
-	{
-		j = 0;
-		map_stat.width = 0;
-		str = ft_strsplit(grid[i], ' ');
-		while (str[map_stat.width])
-			map_stat.width++;
-		map[i] = (int *)malloc(sizeof(int) * map_stat.width);
-		while (str[j])
-		{
-			map[i][j] = ft_atoi(str[j]);
-			ft_strdel(&str[j++]);
-		}
-		free(str);
-		free(grid[j]);
-		i++;
-	}
-	return (f_obnulenie(map_stat, map, i));
-}
-
 t_map		line_num(char **av)
 {
 	t_map	map_stat;
@@ -74,7 +45,6 @@ int			main(int ac, char **av)
 		mlx_hook(fdf->win_ptr, 5, 2, mouse_release, fdf);
 		draw(fdf->map, fdf);
 		mlx_loop(fdf->mlx_ptr);
-		free_fdf(fdf);
 	}
 	else
 	{
@@ -98,7 +68,7 @@ t_fdf		*initialize_fdf(t_fdf *fdf, char **av)
 	fdf->camera->zoomb = 1;
 	fdf->camera->move = 1;
 	fdf->mlx_ptr = mlx_init();
-	*fdf->map = get_map(av);
+	*(fdf->map) = get_map(av);
 	fdf->win_ptr = mlx_new_window(fdf->mlx_ptr, 1500, 1500, "42 visualizer");
 	return (fdf);
 }
@@ -124,4 +94,33 @@ t_map		get_map(char **av)
 	map_stat = line_num(av);
 	close(fd);
 	return (char_to_arr(grid, map_stat));
+}
+
+t_map		char_to_arr(char **grid, t_map map_stat)
+{
+	int		**map;
+	int		i;
+	char	**str;
+	int		j;
+
+	i = 0;
+	map = (int **)malloc(sizeof(int *) * map_stat.height);//малочим указатель на строки с циферками
+	while (grid[i])
+	{
+		j = 0;
+		map_stat.width = 0;
+		str = ft_strsplit(grid[i], ' ');
+		while (str[map_stat.width])
+			map_stat.width++;
+		map[i] = (int *)malloc(sizeof(int) * map_stat.width);//малочим указатель на строку с циферками
+		while (str[j])
+		{
+			map[i][j] = ft_atoi(str[j]);
+			ft_strdel(&str[j++]);
+		}
+		free(str);
+		free(grid[j]);
+		i++;
+	}
+	return (f_obnulenie(map_stat, map, i));
 }

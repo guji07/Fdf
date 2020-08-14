@@ -51,8 +51,10 @@ void			draw_line(t_fdf *fdf, t_point s, t_point f)
 
 void			draw(t_map *map_stat, t_fdf *fdf)
 {
-	int x;
-	int y;
+	int		x;
+	int		y;
+	t_point	*point_first;
+	t_point	*point_second;
 
 	y = 0;
 	while (y < map_stat->height)
@@ -60,12 +62,20 @@ void			draw(t_map *map_stat, t_fdf *fdf)
 		x = 0;
 		while (x < map_stat->width)
 		{
-			if (x < map_stat->width - 1)
-				draw_line(fdf, rotate(init_point(x, y, map_stat), fdf),
-						rotate(init_point(x + 1, y, map_stat), fdf));
-			if (y < map_stat->height - 1)
-				draw_line(fdf, rotate(init_point(x, y, map_stat), fdf),
-						rotate(init_point(x, y + 1, map_stat), fdf));
+			if (x < map_stat->width - 1) {
+				point_first = init_point(x, y, map_stat);
+				point_second = init_point(x + 1, y, map_stat);
+				draw_line(fdf, rotate(point_first, fdf), rotate(point_second, fdf));
+				free(point_first);
+				free(point_second);
+			}
+			if (y < map_stat->height - 1) {
+				point_first = init_point(x, y, map_stat);
+				point_second = init_point(x, y + 1, map_stat);
+				draw_line(fdf, rotate(point_first, fdf), rotate(point_second, fdf));
+				free(point_first);
+				free(point_second);
+			}
 			x++;
 		}
 		y++;

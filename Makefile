@@ -15,6 +15,7 @@ SRCS = src/draw_lines.c         \
        src/main.c               \
        src/mouse_control.c      \
        src/rotate.c             \
+       src/mix.c                \
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror

@@ -1,22 +1,26 @@
-//
-// Created by Владимир on 11.08.2020.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mix.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/09 11:36:00 by tgarkbit          #+#    #+#             */
+/*   Updated: 2020/08/09 11:36:01 by tgarkbit         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "fdf.h"
 
 void free_fdf(t_fdf *fdf)
 {
 	int 	i;
+	t_map	*map;
 
 	free(fdf->camera);
-	free(fdf->map);
+	free(fdf->camera);
 	i = -1;
-	while (++i)
-	{
-		if ((fdf->map->map)[i] != NULL)
-			free(fdf->map->map[i]);
-	}
-	free(fdf->map->map);
-	free(fdf->map);
+	map = fdf->map;
+	//map =
 	free(fdf);
 }
